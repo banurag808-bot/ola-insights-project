@@ -4,7 +4,7 @@ import pandas as pd
 import base64
 
 # ----------------- Load Dataset -----------------
-df = pd.read_csv(r"D:\OLA\ola_rides_cleaned.csv")
+df = pd.read_csv("ola_rides_cleaned.csv")
 
 st.set_page_config(page_title="Ola Ride Insights", layout="wide")
 
