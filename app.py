@@ -88,7 +88,7 @@ elif menu == "SQL Insights":
 elif menu == "Power BI Dashboard":
     st.title("📊 Power BI Dashboard (Exported PDF)")
 
-    pdf_file = r"D:\OLA\ola_powerbi_dashboard.pdf.pdf"
+    pdf_file = "ola_powerbi_dashboard.pdf"  # Or your exact PDF filename
 
     # Show PDF inside Streamlit
     with open(pdf_file, "rb") as f:
