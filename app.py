@@ -41,7 +41,7 @@ elif menu == "SQL Insights":
     st.title("🗂 SQL Insights (Recreated with Pandas)")
 
     # 1. Successful bookings
-    success = df[df['ride_status'] == 'Completed']
+    success = df[df['ride_status'] == 'Success']
     st.subheader("1️⃣ Successful Bookings")
     st.write(success.head())
 
@@ -73,13 +73,8 @@ elif menu == "SQL Insights":
     st.subheader("6️⃣ Peak Demand Hours by Ride Count")
     st.write(peak_hours)
 
-    # 7. Max & Min driver ratings for Sedans
-    sedan_ratings = df[df['vehicle_type'] == 'Sedan']["driver_rating"]
-    st.subheader("7️⃣ Driver Ratings for Sedan")
-    st.write({"Max": sedan_ratings.max(), "Min": sedan_ratings.min()})
-
-    # 8. Rides paid by Card
-    card_rides = df[df['payment_method'] == 'Card']
+       # 8. Rides paid by Card
+    card_rides = df[df['payment_method'] == 'Credit Card']
     st.subheader("8️⃣ Rides Paid by Card")
     st.write(card_rides.head())
 
@@ -89,7 +84,7 @@ elif menu == "SQL Insights":
     st.write(avg_cust_rating)
 
     # 10. Total revenue from successful rides
-    revenue = df[df['ride_status'] == 'Completed']["fare"].sum()
+    revenue = df[df['ride_status'] == 'Success']["fare"].sum()
     st.subheader("🔟 Total Revenue (Successful Rides)")
     st.metric("Revenue", f"₹{revenue:,.2f}")
 
